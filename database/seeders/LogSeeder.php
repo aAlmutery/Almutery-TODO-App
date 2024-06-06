@@ -1,0 +1,27 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use App\Models\TaskLogs;
+
+class LogSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        for ($i = 1; $i <= 17; $i++) {
+
+            TaskLogs::create([
+                'name' => 'Create Task',
+                'user_name' => 'Manager',
+                'role_name' => 'Owner',
+                'task_id' => $i,
+                'created_by' => 1,
+            ]);
+        }
+    }
+}
